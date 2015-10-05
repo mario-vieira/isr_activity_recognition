@@ -44,7 +44,7 @@ Software available at http://www.
 For any questions and comments, please send your email to
 mvieira@isr.uc.pt or diego@isr.uc.pt
 
-Acknowledgments:                                                                                                        
+**Acknowledgments:**                                                                                                        
 This work has been supported by the Portuguese Foundation for Science
 and  Technology,  COMPETE  and  QREN  programs  under  Grant  AMS-
 HMI12  RECI/EEI-AUT/0181/2012.  The  authors  are  with  Institute  of  Sys-
