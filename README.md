@@ -6,7 +6,7 @@ done using a Dynamic Bayesian Mixture Model (DBMM) which combines two or more si
 In addition to recognizing activities, reaction can be triggered according to the activity being performed. 
 
 ACTIVITIES: 1 - Walking
-	          2 - Standing still
+----------- 2 - Standing still
             3 - Working on computer
             4 - Talking on the phone
             5 - Running
@@ -31,7 +31,7 @@ If you find isr_activity_recognition stack helpful, please cite it as
 2. Diego R. Faria, Mário Vieira, Cristiano Premebida, Urbano Nunes, Probabilistic Human Daily Activity Recognition towards Robot-assisted Living, 2015
 
 
-Software available at http://www.csie.ntu.edu.tw/~cjlin/libsvm
+Software available at http://www.
 
 For any questions and comments, please send your email to
 mvieira@isr.uc.pt or diego@isr.uc.pt
