@@ -18,12 +18,12 @@ ACTIVITIES:
 isr_activity_recognition is available at
 
 
-USAGE
+Usage
 =====
 
 
 
-ADDITIONAL INFORMATION
+Additional Information
 ======================
 
 If you find isr_activity_recognition stack helpful, please cite it as
