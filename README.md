@@ -6,6 +6,7 @@ done using a Dynamic Bayesian Mixture Model (DBMM) which combines two or more si
 In addition to recognizing activities, reaction can be triggered according to the activity being performed. 
 
 **ACTIVITIES:** 
+
 1. Walking
 2. Standing still
 3. Working on computer
