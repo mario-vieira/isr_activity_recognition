@@ -1,9 +1,7 @@
 # isr_activity_recognition
 
-The isr_activity_recognition stack was developed for real time human activity recognition. It uses an 
-RGB-D sensor (Microsoft Kinect) to track the human skeleton and extract features. The classification is
-done using a Dynamic Bayesian Mixture Model (DBMM) which combines two or more single classifiers  
-In addition to recognizing activities, reaction can be triggered according to the activity being performed. 
+The isr_activity_recognition stack was developed for real time human activity recognition using a mobile robot. It uses an RGB-D sensor (Microsoft Kinect) to track the human skeleton and extract features. The classification is done using a Dynamic Bayesian Mixture Model (DBMM) which combines two or more single classifiers to improve the overall classification performance.  
+In addition to recognizing activities, reaction can be triggered according to the activity being performed. If a person says "follow me", the robot will follow the person, keeping the monitoring. If the activity detected is "running" or "jumping", a sonorous warning will be triggered. Finally, if the activity detected is "falling", the robot will ask if the person needs help and in affirmative case, it will call a doctor or relative (not implemented).  
 
 **ACTIVITIES:** 
 
