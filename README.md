@@ -14,15 +14,15 @@ In addition to recognizing activities, reaction can be triggered according to th
 5. Running
 6. Jumping
 7. Falling
-8. Sitting down.
+8. Sitting down
 
 isr_activity_recognition is available at
 
 Necessary third party libraries
 ===============================
-The NITE library must be manually installed for openni_tracker to function. See https://github.com/ros-drivers/openni_tracker
+* The NITE library must be manually installed for openni_tracker to function. See https://github.com/ros-drivers/openni_tracker
 
-The scikit-learn must be intalled for classifica.py to work. See http://scikit-learn.org/stable/install.html
+* The scikit-learn must be intalled for classifica.py to work. See http://scikit-learn.org/stable/install.html
 
 Usage
 =====
