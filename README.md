@@ -17,6 +17,9 @@ ACTIVITIES:
 
 isr_activity_recognition is available at
 
+Necessary third party libraries
+===============================
+The NITE library must be manually installed for openni_tracker to function. See https://github.com/ros-drivers/openni_tracker
 
 Usage
 =====
