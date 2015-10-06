@@ -44,7 +44,14 @@ isr_activity_recognition is available at
 
 ## Usage
 
-`roslaunch isr_activity_recognition activity_recognition.launch`
+```
+roslaunch isr_activity_recognition activity_recognition.launch
+```
+
+If you have a mobile robot up and running you can also run
+```
+rosrun random_navigation_goals one_of_the_follower_nodes
+```
 
 
 ## Additional Information
