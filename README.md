@@ -22,24 +22,23 @@ isr_activity_recognition is available at
 
 * The scikit-learn must be installed for `classifica_w.py` to work. See http://scikit-learn.org/stable/install.html
 
-* The sound_play node must be installed for text-to-speech. See http://wiki.ros.org/sound_play
+* The `sound_play` node must be installed for text-to-speech. See http://wiki.ros.org/sound_play
 
-* The pocketsphinx package must be installed for speech recognition. See http://www.pirobot.org/blog/0022/
+* The `pocketsphinx` package must be installed for speech recognition. See http://www.pirobot.org/blog/0022/
 
 ## Description of packages and other files
 
-* openni_launch: This package contains launch files for using OpenNI-compliant devices such as the Microsoft Kinect in ROS.
+* **openni_launch:** This package contains launch files for using OpenNI-compliant devices such as the Microsoft Kinect in ROS.
 
-* openni_tracker: The OpenNI tracker broadcasts the OpenNI skeleton frames using tf.
+* **openni_tracker:** The OpenNI tracker broadcasts the OpenNI skeleton frames using `tf`.
 
-* learning_image_geometry: This package projects the tf frames of the skeleton acquired by the openni_tracker onto an image.
+* **learning_image_geometry:** This package projects the `tf` frames of the skeleton acquired by the `openni_tracker` onto an image.
 
-* learninf_tf: This package uses the tf_listener node to get the coordinates of the skeleton being tracked relative to the torso and camera, and the classifica_w.py node to recognize the activity being performed.
+* **learninf_tf:** This package uses the `tf_listener` node to get the coordinates of the skeleton being tracked relative to the torso and camera, and the `classifica_w.py` node to recognize the activity being performed.
 
-* pi_speech_tutorial: This package contains lauch files to speech recognition.
+* **pi_speech_tutorial:** This package contains lauch files for speech recognition.
 
-* random_navigation_goals: This package is responsible for robot navigation. The simple_navigation_goals node makes the robot randomly navigate the environment. The follower_speed node makes the robot follow a person, using velocity commands. The follower node makes the robot follow a person if it hear "follow me", avoiding collision with the human. Finally, the follower_speed node do the same as the follower node, sending velocity commands instead.  
-
+* **random_navigation_goals:** This package is responsible for robot navigation. The `simple_navigation_goals` node makes the robot randomly navigate the environment. The `follower_speed` node makes the robot follow a person, using velocity commands. The `follower` node makes the robot follow a person if it hear "follow me", avoiding collision with the human. Finally, the `follower_speed` node does the same as the `follower` node, sending velocity commands instead.  
 ## Usage
 
 ```
