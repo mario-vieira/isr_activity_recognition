@@ -1,0 +1,29 @@
+K 25
+svn:wc:ra_dav:version-url
+V 55
+/svn/!svn/ver/659/trunk/pi_tutorials/pi_speech_tutorial
+END
+mainpage.dox
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/svn/!svn/ver/601/trunk/pi_tutorials/pi_speech_tutorial/mainpage.dox
+END
+CMakeLists.txt
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svn/!svn/ver/601/trunk/pi_tutorials/pi_speech_tutorial/CMakeLists.txt
+END
+Makefile
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/svn/!svn/ver/601/trunk/pi_tutorials/pi_speech_tutorial/Makefile
+END
+manifest.xml
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/svn/!svn/ver/602/trunk/pi_tutorials/pi_speech_tutorial/manifest.xml
+END

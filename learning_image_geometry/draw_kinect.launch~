@@ -1,0 +1,27 @@
+<launch>
+  <node name="draw_frames" pkg="learning_image_geometry" type="draw_frames" args="/torso_1 /neck_1 /head_1 /left_shoulder_1 /left_elbow_1 /left_hand_1 /right_shoulder_1 /right_elbow_1 /right_hand_1 /left_hip_1 /left_knee_1 /left_foot_1 /right_hip_1 /right_knee_1 /right_foot_1" output="screen">
+    <remap from="image" to="/camera/rgb/image_rect_color" />
+  </node>
+  
+  <node name="draw_frames2" pkg="learning_image_geometry" type="draw_frames" args="/torso_2 /neck_2 /head_2 /left_shoulder_2 /left_elbow_2 /left_hand_2 /right_shoulder_2 /right_elbow_2 /right_hand_2 /left_hip_2 /left_knee_2 /left_foot_2 /right_hip_2 /right_knee_2 /right_foot_2" output="screen">
+    <remap from="image" to="/camera/rgb/image_rect_color" />
+  </node>
+  
+  <node name="draw_frames3" pkg="learning_image_geometry" type="draw_frames" args="/torso_3 /neck_3 /head_3 /left_shoulder_3 /left_elbow_3 /left_hand_3 /right_shoulder_3 /right_elbow_3 /right_hand_3 /left_hip_3 /left_knee_3 /left_foot_3 /right_hip_3 /right_knee_3 /right_foot_3" output="screen">
+    <remap from="image" to="/camera/rgb/image_rect_color" />
+  </node>
+  
+  <node name="draw_frames4" pkg="learning_image_geometry" type="draw_frames" args="/torso_4 /neck_4 /head_4 /left_shoulder_4 /left_elbow_4 /left_hand_4 /right_shoulder_4 /right_elbow_4 /right_hand_4 /left_hip_4 /left_knee_4 /left_foot_4 /right_hip_4 /right_knee_4 /right_foot_4" output="screen">
+    <remap from="image" to="/camera/rgb/image_rect_color" />
+  </node>
+  
+  <node name="input_viewer" pkg="image_view" type="image_view">
+    <remap from="image" to="/camera/rgb/image_rect_color" />
+    <param name="autosize" value="True" />
+  </node>
+
+  <node name="output_viewer" pkg="image_view" type="image_view">
+    <remap from="image" to="image_out" />
+    <param name="autosize" value="True" />
+  </node>
+</launch>

@@ -1,0 +1,255 @@
+#include <ros/ros.h>
+#include <tf/transform_listener.h>
+#include <cstdio>
+#include <iostream>
+#include <fstream>
+using namespace std;
+
+int main(int argc, char** argv){
+  ros::init(argc, argv, "tf_listener");
+  ofstream myfile("test.txt");
+
+  string MAIN_FRAME = "/torso_1";
+  string FRAMES[] = {"head_1", "neck_1", "torso_1", "left_shoulder_1", "right_shoulder_1", 
+		"left_hand_1", "right_hand_1", "left_elbow_1", "right_elbow_1", "left_hip_1",
+	 	"right_hip_1", "left_knee_1", "right_knee_1", "left_foot_1", "right_foot_1"};
+
+  ros::NodeHandle node;
+
+  tf::TransformListener listener;
+
+  ros::Rate rate(30.0);
+
+  while (node.ok()){
+
+    	tf::StampedTransform tf_head;
+ 	tf::StampedTransform tf_neck;
+ 	tf::StampedTransform tf_torso;
+ 	tf::StampedTransform tf_left_shoulder;
+ 	tf::StampedTransform tf_right_shoulder;
+ 	tf::StampedTransform tf_left_hand;
+ 	tf::StampedTransform tf_right_hand;
+ 	tf::StampedTransform tf_left_elbow;
+ 	tf::StampedTransform tf_right_elbow;
+ 	tf::StampedTransform tf_left_hip;
+ 	tf::StampedTransform tf_right_hip;
+ 	tf::StampedTransform tf_left_knee;
+ 	tf::StampedTransform tf_right_knee;
+ 	tf::StampedTransform tf_left_foot;
+ 	tf::StampedTransform tf_right_foot;
+
+    	try{
+
+		// head
+ 		listener.lookupTransform(MAIN_FRAME, FRAMES[0], ros::Time(0), tf_head);
+		
+ 		double x_head = tf_head.getOrigin().x();
+ 		double y_head = tf_head.getOrigin().y();
+		double z_head = tf_head.getOrigin().z();
+
+		double roll_head, pitch_head, yaw_head ;
+		tf_head.getBasis().getRPY(roll_head, pitch_head, yaw_head);
+		tf::Quaternion q_head = tf_head.getRotation();
+
+		// neck
+ 		listener.lookupTransform(MAIN_FRAME, FRAMES[1], ros::Time(0), tf_neck);
+
+ 		double x_neck = tf_neck.getOrigin().x();
+ 		double y_neck = tf_neck.getOrigin().y();
+		double z_neck = tf_neck.getOrigin().z();
+
+		double roll_neck, pitch_neck, yaw_neck ;
+		tf_neck.getBasis().getRPY(roll_neck, pitch_neck, yaw_neck);
+		tf::Quaternion q_neck = tf_neck.getRotation();
+
+		// torso
+ 		listener.lookupTransform(MAIN_FRAME, FRAMES[2], ros::Time(0), tf_torso);
+
+ 		double x_torso = tf_torso.getOrigin().x();
+ 		double y_torso = tf_torso.getOrigin().y();
+		double z_torso = tf_torso.getOrigin().z();
+
+		double roll_torso, pitch_torso, yaw_torso ;
+		tf_torso.getBasis().getRPY(roll_torso, pitch_torso, yaw_torso);
+		tf::Quaternion q_torso = tf_torso.getRotation();
+
+ 		// left shoulder
+ 		listener.lookupTransform(MAIN_FRAME, FRAMES[3], ros::Time(0), tf_left_shoulder);
+
+		double x_left_shoulder = tf_left_shoulder.getOrigin().x();
+		double y_left_shoulder = tf_left_shoulder.getOrigin().y();
+		double z_left_shoulder = tf_left_shoulder.getOrigin().z();
+
+		double roll_left_shoulder, pitch_left_shoulder, yaw_left_shoulder ;
+		tf_left_shoulder.getBasis().getRPY(roll_left_shoulder, pitch_left_shoulder, yaw_left_shoulder);
+		tf::Quaternion q_left_shoulder = tf_left_shoulder.getRotation();
+
+		// right shoulder
+		listener.lookupTransform(MAIN_FRAME, FRAMES[4], ros::Time(0), tf_right_shoulder);
+
+ 		double x_right_shoulder = tf_right_shoulder.getOrigin().x();
+ 		double y_right_shoulder = tf_right_shoulder.getOrigin().y();
+		double z_right_shoulder = tf_right_shoulder.getOrigin().z();
+
+		double roll_right_shoulder, pitch_right_shoulder, yaw_right_shoulder ;
+		tf_right_shoulder.getBasis().getRPY(roll_right_shoulder, pitch_right_shoulder, yaw_right_shoulder);
+		tf::Quaternion q_right_shoulder = tf_right_shoulder.getRotation();
+
+ 		// left hand
+ 		listener.lookupTransform(MAIN_FRAME, FRAMES[5], ros::Time(0), tf_left_hand);
+
+		double x_left_hand = tf_left_hand.getOrigin().x();
+		double y_left_hand = tf_left_hand.getOrigin().y();
+		double z_left_hand = tf_left_hand.getOrigin().z();
+
+		double roll_left_hand, pitch_left_hand, yaw_left_hand ;
+		tf_left_hand.getBasis().getRPY(roll_left_hand, pitch_left_hand, yaw_left_hand);
+		tf::Quaternion q_left_hand = tf_left_hand.getRotation();
+
+		// right hand
+		listener.lookupTransform(MAIN_FRAME, FRAMES[6], ros::Time(0), tf_right_hand);
+
+		double x_right_hand = tf_right_hand.getOrigin().x();
+		double y_right_hand = tf_right_hand.getOrigin().y();
+		double z_right_hand = tf_right_hand.getOrigin().z();
+
+		double roll_right_hand, pitch_right_hand, yaw_right_hand ;
+		tf_right_hand.getBasis().getRPY(roll_right_hand, pitch_right_hand, yaw_right_hand);
+		tf::Quaternion q_right_hand = tf_right_hand.getRotation();
+
+		// left elbow
+		listener.lookupTransform(MAIN_FRAME, FRAMES[7], ros::Time(0), tf_left_elbow);
+
+ 		double x_left_elbow = tf_left_elbow.getOrigin().x();
+ 		double y_left_elbow = tf_left_elbow.getOrigin().y();
+		double z_left_elbow = tf_left_elbow.getOrigin().z();
+
+		double roll_left_elbow, pitch_left_elbow, yaw_left_elbow ;
+		tf_left_elbow.getBasis().getRPY(roll_left_elbow, pitch_left_elbow, yaw_left_elbow);
+		tf::Quaternion q_left_elbow = tf_left_elbow.getRotation();
+
+ 		// right elbow
+ 		listener.lookupTransform(MAIN_FRAME, FRAMES[8], ros::Time(0), tf_right_elbow);
+
+ 		double x_right_elbow = tf_right_elbow.getOrigin().x();
+ 		double y_right_elbow = tf_right_elbow.getOrigin().y();
+		double z_right_elbow = tf_right_elbow.getOrigin().z();
+
+		double roll_right_elbow, pitch_right_elbow, yaw_right_elbow ;
+		tf_right_elbow.getBasis().getRPY(roll_right_elbow, pitch_right_elbow, yaw_right_elbow);
+		tf::Quaternion q_right_elbow = tf_right_elbow.getRotation();
+
+ 		// left hip
+ 		listener.lookupTransform(MAIN_FRAME, FRAMES[9], ros::Time(0), tf_left_hip);
+
+ 		double x_left_hip = tf_left_hip.getOrigin().x();
+ 		double y_left_hip = tf_left_hip.getOrigin().y();
+		double z_left_hip = tf_left_hip.getOrigin().z();
+
+		double roll_left_hip, pitch_left_hip, yaw_left_hip ;
+		tf_left_hip.getBasis().getRPY(roll_left_hip, pitch_left_hip, yaw_left_hip);
+		tf::Quaternion q_left_hip = tf_left_hip.getRotation();
+
+ 		// right hip
+ 		listener.lookupTransform(MAIN_FRAME, FRAMES[10], ros::Time(0), tf_right_hip);
+
+ 		double x_right_hip = tf_right_hip.getOrigin().x();
+ 		double y_right_hip = tf_right_hip.getOrigin().y();
+		double z_right_hip = tf_right_hip.getOrigin().z();
+
+		double roll_right_hip, pitch_right_hip, yaw_right_hip ;
+		tf_right_hip.getBasis().getRPY(roll_right_hip, pitch_right_hip, yaw_right_hip);
+		tf::Quaternion q_right_hip = tf_right_hip.getRotation();
+
+ 		// left knee
+ 		listener.lookupTransform(MAIN_FRAME, FRAMES[11], ros::Time(0), tf_left_knee);
+
+ 		double x_left_knee = tf_left_knee.getOrigin().x();
+ 		double y_left_knee = tf_left_knee.getOrigin().y();
+		double z_left_knee = tf_left_knee.getOrigin().z();
+
+		double roll_left_knee, pitch_left_knee, yaw_left_knee ;
+		tf_left_knee.getBasis().getRPY(roll_left_knee, pitch_left_knee, yaw_left_knee);
+		tf::Quaternion q_left_knee = tf_left_knee.getRotation();
+
+ 		// right knee
+ 		listener.lookupTransform(MAIN_FRAME, FRAMES[12], ros::Time(0), tf_right_knee);
+
+ 		double x_right_knee = tf_right_knee.getOrigin().x();
+ 		double y_right_knee = tf_right_knee.getOrigin().y();
+		double z_right_knee = tf_right_knee.getOrigin().z();
+
+		double roll_right_knee, pitch_right_knee, yaw_right_knee ;
+		tf_right_knee.getBasis().getRPY(roll_right_knee, pitch_right_knee, yaw_right_knee);
+		tf::Quaternion q_right_knee = tf_right_knee.getRotation();
+
+ 		// left foot
+ 		listener.lookupTransform(MAIN_FRAME, FRAMES[13], ros::Time(0), tf_left_foot);
+
+ 		double x_left_foot = tf_left_foot.getOrigin().x();
+ 		double y_left_foot = tf_left_foot.getOrigin().y();
+		double z_left_foot = tf_left_foot.getOrigin().z();
+
+		double roll_left_foot, pitch_left_foot, yaw_left_foot ;
+		tf_left_foot.getBasis().getRPY(roll_left_foot, pitch_left_foot, yaw_left_foot);
+		tf::Quaternion q_left_foot = tf_left_foot.getRotation();
+
+ 		// right foot
+ 		listener.lookupTransform(MAIN_FRAME, FRAMES[14], ros::Time(0), tf_right_foot);
+
+ 		double x_right_foot = tf_right_foot.getOrigin().x();
+ 		double y_right_foot = tf_right_foot.getOrigin().y();
+		double z_right_foot = tf_right_foot.getOrigin().z();
+
+		double roll_right_foot, pitch_right_foot, yaw_right_foot ;
+		tf_right_foot.getBasis().getRPY(roll_right_foot, pitch_right_foot, yaw_right_foot);
+		tf::Quaternion q_right_foot = tf_right_foot.getRotation();
+		// End of body transforms
+
+/*     
+      cout.precision(3);
+      cout.setf(std::ios::fixed,std::ios::floatfield);
+      cout << "At time " << echo_transform.stamp_.toSec() <<      endl;
+      double yaw, pitch, roll;
+      echo_transform.getBasis().getRPY(roll, pitch, yaw);
+      tf::Quaternion q = echo_transform.getRotation();
+      tf::Vector3 v = echo_transform.getOrigin();
+      cout << "- Translation: [" << v.getX() << ", " << v.getY() << ", " << v.getZ() << "]" << endl;
+      cout << "- Rotation: in Quaternion [" << q.getX() << ", " << q.getY() << ", " 
+<< q.getZ() << ", " << q.getW() << "]" << endl
+<< "            in RPY [" <<  roll << ", " << pitch << ", " << yaw << "]" << endl;
+
+  */
+
+     		if (myfile.is_open()){
+       			myfile << "Translation: "<<x_head<<" "<<y_head<<" "<<z_head<<" RPY: "<<roll_head<<" "<<pitch_head<<" "<<yaw_head<< endl;
+       			myfile << "Translation: "<<x_neck<<" "<<y_neck<<" "<<z_neck<<" RPY: "<<roll_neck<<" "<<pitch_neck<<" "<<yaw_neck<< endl;
+       			myfile << "Translation: "<<x_torso<<" "<<y_torso<<" "<<z_torso<<" RPY: "<<roll_torso<<" "<<pitch_torso<<" "<<yaw_torso<< endl;
+       			myfile << "Translation: "<<x_left_shoulder<<" "<<y_left_shoulder<<" "<<z_left_shoulder<<" RPY: "<<roll_left_shoulder<<" "<<pitch_left_shoulder<<" "<<yaw_left_shoulder<< endl;
+       			myfile << "Translation: "<<x_left_elbow<<" "<<y_left_elbow<<" "<<z_left_elbow<<" RPY: "<<roll_left_elbow<<" "<<pitch_left_elbow<<" "<<yaw_left_elbow<< endl;
+       			myfile << "Translation: "<<x_right_shoulder<<" "<<y_right_shoulder<<" "<<z_right_shoulder<<" RPY: "<<roll_right_shoulder<<" "<<pitch_right_shoulder<<" "<<yaw_right_shoulder<< endl;
+       			myfile << "Translation: "<<x_right_elbow<<" "<<y_right_elbow<<" "<<z_right_elbow<<" RPY: "<<roll_right_elbow<<" "<<pitch_right_elbow<<" "<<yaw_right_elbow<< endl;
+       			myfile << "Translation: "<<x_left_hip<<" "<<y_left_hip<<" "<<z_left_hip<<" RPY: "<<roll_left_hip<<" "<<pitch_left_hip<<" "<<yaw_left_hip<< endl;
+       			myfile << "Translation: "<<x_left_knee<<" "<<y_left_knee<<" "<<z_left_knee<<" RPY: "<<roll_left_knee<<" "<<pitch_left_knee<<" "<<yaw_left_knee<< endl;
+       			myfile << "Translation: "<<x_right_hip<<" "<<y_right_hip<<" "<<z_head_right_hip<<" RPY: "<<roll_right_hip<<" "<<pitch_right_hip<<" "<<yaw_right_hip<< endl;
+       			myfile << "Translation: "<<x_right_knee<<" "<<y_right_knee<<" "<<z_right_knee<<" RPY: "<<roll_right_knee<<" "<<pitch_right_knee<<" "<<yaw_right_knee<< endl;
+       			myfile << "Translation: "<<x_left_hand<<" "<<y_left_hand<<" "<<z_left_hand<<" RPY: "<<roll_left_hand<<" "<<pitch_left_hand<<" "<<yaw_left_hand<< endl;
+       			myfile << "Translation: "<<x_right_hand<<" "<<y_right_hand<<" "<<z_right_hand<<" RPY: "<<roll_right_hand<<" "<<pitch_right_hand<<" "<<yaw_right_hand<< endl;
+       			myfile << "Translation: "<<x_left_foot<<" "<<y_left_foot<<" "<<z_left_foot<<" RPY: "<<roll_left_foot<<" "<<pitch_left_foot<<" "<<yaw_left_foot<< endl;
+       			myfile << "Translation: "<<x_right_foot<<" "<<y_right_foot<<" "<<z_right_foot<<" RPY: "<<roll_right_foot<<" "<<pitch_right_foot<<" "<<yaw_right_foot<< endl;
+   		} 
+}
+    catch (tf::TransformException &ex) {
+      //ROS_ERROR("%s",ex.what());
+      //ros::Duration(1.0).sleep();
+      cout << "Failure at "<< ros::Time::now() << endl;
+      cout << "Exception thrown:" << ex.what()<< endl;
+      cout << "The current list of frames is:" << endl;
+      cout << listener.allFramesAsString()<< endl;
+    }
+
+    rate.sleep();
+  }
+  myfile.close();
+  return 0;
+};

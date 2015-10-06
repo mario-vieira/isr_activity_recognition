@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+
+<launch>
+
+  <include file="$(find openni_launch)/launch/openni.launch"/> 
+  <node pkg="openni_tracker" type="openni_tracker" name="openni_tracker"/>
+  <include file="$(find learning_image_geometry)/draw_kinect.launch"/>
+  <node pkg="tf" type="static_transform_publisher" name="link1_broadcaster" args="0 0 0 0 0 0 camera_link openni_depth_frame 30" />
+  <node pkg="learning_tf" type="tf_listener" name="tf_listener"/>
+  <node pkg="learning_tf" type="classifica_w.py" name="classifica" output="screen"/>
+  <node pkg="sound_play" type="soundplay_node.py" name="soundplay_node"/>
+  <include file="$(find pi_speech_tutorial)/launch/voice_nav_commands.launch"/> 
+   
+</launch>
