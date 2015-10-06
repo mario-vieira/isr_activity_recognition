@@ -38,6 +38,8 @@ isr_activity_recognition is available at
 
 * pi_speech_tutorial: This package contains lauch files to speech recognition.
 
+* random_navigation_goals: This package is responsible for robot navigation. The simple_navigation_goals node makes the robot randomly navigate the environment. The follower_speed node makes the robot follow a person, using velocity commands. The follower node makes the robot follow a person if it hear "follow me", avoiding collision with the human. Finally, the follower_speed node do the same as the follower node, sending velocity commands instead.  
+
 ## Usage
 
 ```
