@@ -18,9 +18,9 @@ isr_activity_recognition is available at
 
 ## Necessary third party libraries
 
-* The NITE library must be manually installed for openni_tracker to function. See https://github.com/ros-drivers/openni_tracker
+* The NITE library must be manually installed for `openni_tracker` to function. See https://github.com/ros-drivers/openni_tracker
 
-* The scikit-learn must be installed for classifica_w.py to work. See http://scikit-learn.org/stable/install.html
+* The scikit-learn must be installed for `classifica_w.py` to work. See http://scikit-learn.org/stable/install.html
 
 * The sound_play node must be installed for text-to-speech. See http://wiki.ros.org/sound_play
 
