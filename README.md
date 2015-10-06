@@ -14,7 +14,7 @@ In addition to recognizing activities, reactions can be triggered according to t
 7. Falling
 8. Sitting down
 
-isr_activity_recognition is available at
+The isr_activity_recognition was implemented and tested using ROS Hydro running on Ubuntu 12.04.
 
 ## Necessary third party libraries
 
