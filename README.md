@@ -1,7 +1,7 @@
 # isr_activity_recognition
 
 The isr_activity_recognition stack was developed for real time human activity recognition using a mobile robot. It uses an RGB-D sensor (Microsoft Kinect) to track the human skeleton and extract features. The classification is done using a Dynamic Bayesian Mixture Model (DBMM) which combines two or more single classifiers to improve the overall classification performance.  
-In addition to recognizing activities, reaction can be triggered according to the activity being performed. If a person says "follow me", the robot will follow the person, keeping the monitoring. If the activity detected is "running" or "jumping", a sonorous warning will be triggered. Finally, if the activity detected is "falling", the robot will ask if the person needs help and in affirmative case, it will call a doctor or relative (not implemented).  
+In addition to recognizing activities, reactions can be triggered according to the activity being performed. If a person says "follow me", the robot will follow the person, keeping the monitoring. If the activity detected is "running" or "jumping", a sonorous warning will be triggered. Finally, if the activity detected is "falling", the robot will ask if the person needs help and in affirmative case, it will call a doctor or relative (not implemented).  
 
 **ACTIVITIES:** 
 
@@ -38,7 +38,10 @@ isr_activity_recognition is available at
 
 * **pi_speech_tutorial:** This package contains lauch files for speech recognition.
 
-* **random_navigation_goals:** This package is responsible for robot navigation. The `simple_navigation_goals` node makes the robot randomly navigate the environment. The `follower_speed` node makes the robot follow a person, using velocity commands. The `follower` node makes the robot follow a person if it hear "follow me", avoiding collision with the human. Finally, the `follower_speed` node does the same as the `follower` node, sending velocity commands instead.  
+* **random_navigation_goals:** This package is responsible for robot navigation. The `simple_navigation_goals` node makes the robot randomly navigate the environment. The `follower_speed` node makes the robot follow a person, using velocity commands. The `follower` node makes the robot follow a person if it hear "follow me", avoiding collision with the human. Finally, the `follower_speed` node does the same as the `follower` node, sending velocity commands instead. 
+
+* **isr_activity_recognition:** This is the main package. It launches all necessary files for activity recognition. 
+
 ## Usage
 
 ```
